@@ -20,6 +20,7 @@ public class SonarTestApplication {
 //              """);
 			log.info("demo");
 		}
+		System.out.println("Hi");
 
 	}
 }
