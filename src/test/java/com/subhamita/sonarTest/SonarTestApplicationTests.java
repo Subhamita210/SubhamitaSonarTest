@@ -8,7 +8,10 @@ class SonarTestApplicationTests {
 
 
 	@Test
-	void contextLoads() {}
+	void contextLoads() {
+
+		System.out.println("I am in contextLoads");
+	}
 	@Test
 	void test1() {
 		System.out.println("I am in test class test 1");
