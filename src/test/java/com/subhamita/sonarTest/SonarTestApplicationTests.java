@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class SonarTestApplicationTests {
 
 
+
 	@Test
 	void contextLoads() {
 
@@ -22,6 +23,5 @@ class SonarTestApplicationTests {
 		System.out.println("I am in test class test 2");
 
 	}
-
 
 }
