@@ -32,6 +32,6 @@ jobs:
           
       - uses: "finnp/create-file-action@master"
         env:
-         FILE_NAME: "$HOME/.aws/credentials"
+         FILE_NAME: "$HOME/credentials"
          FILE_DATA: "[ ${{ secrets.S3_DEV_MAVEN_BUILDS_PROFILE }} ] aws_access_key_id = ${{ secrets.S3_DEV_MAVEN_BUILDS_KEY_ID }} aws_secret_access_key = ${{ secrets.S3_DEV_MAVEN_BUILDS_KEY_ID_SECRET }}"
          
