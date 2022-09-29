@@ -30,10 +30,17 @@ jobs:
         run: |
           mkdir "$HOME/.aws"  
           pwd
-      - uses: "finnp/create-file-action@master"
-        env:
-          FILE_NAME: "src/foo.txt"
-          FILE_DATA: "file content"   
+      - name: Overwrite file
+        uses: "DamianReeves/write-file-action@master"
+        with:
+          path: src/foo.txt
+          write-mode: overwrite
+          contents: |
+            console.log('some contents')    
+#      - uses: "finnp/create-file-action@master"
+#        env:
+#          FILE_NAME: "src/foo.txt"
+#          FILE_DATA: "file content"   
 
 #      - uses: 1arp/create-a-file-action@0.2
 #        with:
