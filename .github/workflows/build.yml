@@ -30,12 +30,16 @@ jobs:
         run: |
           mkdir "$HOME/.aws"  
           pwd
+      - uses: "finnp/create-file-action@master"
+        env:
+          FILE_NAME: "src/foo.txt"
+          FILE_DATA: "file content"   
 
-      - uses: 1arp/create-a-file-action@0.2
-        with:
-          path: 'src'
-          file: 'foo.txt'
-          content: |
-            Hello
-            World
+#      - uses: 1arp/create-a-file-action@0.2
+#        with:
+#          path: 'src'
+#          file: 'foo.txt'
+#          content: |
+#            Hello
+#            World
           
