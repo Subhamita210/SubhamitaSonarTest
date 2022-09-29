@@ -26,6 +26,9 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: Prepare files for testing
+        run: |
+          mkdir "$HOME/.aws"          
           
       - uses: "finnp/create-file-action@master"
         env:
