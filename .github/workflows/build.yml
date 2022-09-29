@@ -28,10 +28,11 @@ jobs:
           java-version: 11
       - name: Prepare files for testing
         run: |
-          mkdir "src/new"  
           echo This is sample text > MyFile.txt
           pwd
+          
 #      - name: Overwrite file
+#          mkdir "src/new"  
 #        uses: "DamianReeves/write-file-action@master"
 #        with:
 #          path: src/foo.txt
