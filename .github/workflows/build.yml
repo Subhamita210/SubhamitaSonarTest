@@ -28,7 +28,7 @@ jobs:
           java-version: 11
       - name: Prepare files for testing
         run: |
-          mkdir "src/test"  
+          mkdir "src/new"  
           echo This is sample text > MyFile.txt
           pwd
 #      - name: Overwrite file
