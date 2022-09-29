@@ -28,7 +28,8 @@ jobs:
           java-version: 11
       - name: Prepare files for testing
         run: |
-          mkdir "$HOME/.aws"          
+          mkdir "$HOME/.aws"  
+          pwd
 
       - uses: 1arp/create-a-file-action@0.2
         with:
