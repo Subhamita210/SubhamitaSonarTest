@@ -28,15 +28,16 @@ jobs:
           java-version: 11
       - name: Prepare files for testing
         run: |
-          mkdir "$HOME/.aws"  
+          mkdir "src/test"  
+          echo This is sample text > MyFile.txt
           pwd
-      - name: Overwrite file
-        uses: "DamianReeves/write-file-action@master"
-        with:
-          path: src/foo.txt
-          write-mode: overwrite
-          contents: |
-            console.log('some contents')    
+#      - name: Overwrite file
+#        uses: "DamianReeves/write-file-action@master"
+#        with:
+#          path: src/foo.txt
+#          write-mode: overwrite
+#          contents: |
+#            console.log('some contents')    
 #      - uses: "finnp/create-file-action@master"
 #        env:
 #          FILE_NAME: "src/foo.txt"
