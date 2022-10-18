@@ -6,11 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Create file
-        uses: suisei-cn/actions-download-file@v1.0.1
-        id: downloadfile  # Remember to give an ID if you need the output
-      - name: Download the file
-        with:
+       - uses: suisei-cn/actions-download-file@v1.0.1
+         id: downloadfile  # Remember to give an ID if you need the output
+         name: Download the file
+         with:
           url: "https://cdn.jsdelivr.net/npm/workbox-sw@5.1.3/build/workbox-sw.min.js"
           target: public/
           auto-match: true
