@@ -12,6 +12,7 @@ jobs:
           repo: 'microsoft/mssql-jdbc'
           version: 'tags/v11.2.1'
           file: 'mssql-jdbc_auth.zip'
+          target: 'subdir/mssql-jdbc_auth.zip'
           token: ${{ secrets.GITHUB_TOKEN }}
   
   
