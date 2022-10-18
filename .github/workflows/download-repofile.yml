@@ -12,6 +12,7 @@ jobs:
           7z x mssql-jdbc_auth.zip
           ls mssql-jdbc_auth
           cp -f mssql-jdbc_auth/x64/mssql-jdbc_auth-11.2.1.x64.dll src
+          pwd
      
           
  #       uses: dsaltares/fetch-gh-release-asset@master
