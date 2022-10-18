@@ -1,4 +1,4 @@
-name: Create file
+name: Download repo file
 
 on: [push]
 
@@ -12,5 +12,5 @@ jobs:
           repo: 'dsaltares/godot-wild-jam-18'
           version: 'tags/v0.1.18'
           file: 'plague-linux.zip'
-          target: 'subdir/plague-linux.zip'
+          target: 'plague-linux.zip'
           token: ${{ secrets.GITHUB_TOKEN }}
