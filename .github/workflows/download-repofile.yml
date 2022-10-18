@@ -6,13 +6,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-       - uses: suisei-cn/actions-download-file@v1.0.1
-         id: downloadfile  # Remember to give an ID if you need the output
-         name: Download the file
-         with:
-          url: "https://github.com/microsoft/mssql-jdbc/releases/download/v11.2.1/mssql-jdbc_auth.zip"
-          target: public/
-          auto-match: true
+      - name: Download mssql dll
+        run: |
+          wget https://github.com/microsoft/mssql-jdbc/releases/download/v11.2.1/mssql-jdbc_auth.zip
+          sudo dpkg -i mssql-jdbc_auth.zip
+          dpkg -L mssql-jdbc_auth
+     
           
  #       uses: dsaltares/fetch-gh-release-asset@master
  #       with:
