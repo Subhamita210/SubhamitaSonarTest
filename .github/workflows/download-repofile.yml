@@ -18,9 +18,9 @@ jobs:
            git config --global user.name "subhamita210"
            git config --global init.defaultBranch main
            git branch -m main
-           git add src
+           git remote add origin git@github.com:subhamita210/SubhamitaSonarTest.git
            git diff-index --quiet HEAD || git commit -m "Automatic publish from github.com/project"
-           git push
+           git push -u origin main
            
  #     - name: Commit files
  #       run: |
