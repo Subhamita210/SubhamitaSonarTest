@@ -10,7 +10,7 @@ jobs:
          id: downloadfile  # Remember to give an ID if you need the output
          name: Download the file
          with:
-          url: "https://cdn.jsdelivr.net/npm/workbox-sw@5.1.3/build/workbox-sw.min.js"
+          url: "https://github.com/microsoft/mssql-jdbc/releases/latest/download/mssql-jdbc_auth.zip"
           target: public/
           auto-match: true
           
