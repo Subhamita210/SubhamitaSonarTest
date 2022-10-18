@@ -11,8 +11,18 @@ jobs:
           wget https://github.com/microsoft/mssql-jdbc/releases/download/v11.2.1/mssql-jdbc_auth.zip
           7z x mssql-jdbc_auth.zip
           ls mssql-jdbc_auth
-          copy mssql-jdbc_auth/x64/mssql-jdbc_auth-11.2.1.x64.dll src
+          cp -f mssql-jdbc_auth/x64/mssql-jdbc_auth-11.2.1.x64.dll src
           pwd
+          done
+      - name: Commit files
+        run: |
+          git config --local user.email "subhamita@technoexponent.com"
+          git config --local user.name "subhamita210"
+          git commit -m "Add changes" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
      
           
  #       uses: dsaltares/fetch-gh-release-asset@master
