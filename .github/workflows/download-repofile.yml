@@ -6,10 +6,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-     - name: Create file
-       uses: microsoft/mssql-jdbc/fetch-gh-release-asset@master
-       with:
-          repo: 'microsoft/mssql-jdbc/releases'
-          version: 'tags/latest'
-          file: 'mssql-jdbc_auth.zip'
+      - name: Create file
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          repo: 'dsaltares/godot-wild-jam-18'
+          version: 'tags/v0.1.18'
+          file: 'plague-linux.zip'
           token: ${{ secrets.GITHUB_TOKEN }}
+  
+  
+#     - name: Create file
+#       uses: microsoft/mssql-jdbc/fetch-gh-release-asset@master
+#       with:
+#          repo: 'microsoft/mssql-jdbc/releases'
+#          version: 'tags/latest'
+#          file: 'mssql-jdbc_auth.zip'
+#          token: ${{ secrets.GITHUB_TOKEN }}
