@@ -14,6 +14,8 @@ jobs:
            cp -f mssql-jdbc_auth/x64/mssql-jdbc_auth-11.2.1.x64.dll src
            pwd
            git init
+           git config --global user.email "subhamita@technoexponent.com"
+           git config --global user.name "subhamita210"
            git add .
            git diff-index --quiet HEAD || git commit -m "Automatic publish from github.com/project"
            git push main
