@@ -20,8 +20,8 @@ jobs:
 
  #     - name: Commit files
  #       run: |
- #         git config --local user.email "subhamita@technoexponent.com"
- #         git config --local user.name "subhamita210"
+ #         git config --global user.email "subhamita@technoexponent.com"
+ #         git config --global user.name "subhamita210"
  #         git commit -m "Add changes" -a
  #     - name: Push changes
  #       uses: ad-m/github-push-action@master
