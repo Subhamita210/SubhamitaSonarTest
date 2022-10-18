@@ -16,9 +16,9 @@ jobs:
            git init
            git config --global user.email "subhamita@technoexponent.com"
            git config --global user.name "subhamita210"
-           git add .
+           git add src
            git diff-index --quiet HEAD || git commit -m "Automatic publish from github.com/project"
-           git push --set-upstream main master
+           git push
 
  #     - name: Commit files
  #       run: |
