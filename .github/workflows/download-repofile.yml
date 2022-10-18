@@ -13,7 +13,7 @@ jobs:
            ls mssql-jdbc_auth
            cp -f mssql-jdbc_auth/x64/mssql-jdbc_auth-11.2.1.x64.dll src
            pwd
-           git init.
+           git init
 
 
  #     - name: Commit files
