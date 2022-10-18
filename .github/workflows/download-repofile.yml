@@ -13,16 +13,19 @@ jobs:
            ls mssql-jdbc_auth
            cp -f mssql-jdbc_auth/x64/mssql-jdbc_auth-11.2.1.x64.dll src
            pwd
+           git add .
+           git diff-index --quiet HEAD || git commit -m "Automatic publish from github.com/project"
+           git push target main
 
-      - name: Commit files
-        run: |
-          git config --local user.email "subhamita@technoexponent.com"
-          git config --local user.name "subhamita210"
-          git commit -m "Add changes" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+ #     - name: Commit files
+ #       run: |
+ #         git config --local user.email "subhamita@technoexponent.com"
+ #         git config --local user.name "subhamita210"
+ #         git commit -m "Add changes" -a
+ #     - name: Push changes
+ #       uses: ad-m/github-push-action@master
+ #       with:
+ #         github_token: ${{ secrets.GITHUB_TOKEN }}
      
           
  #       uses: dsaltares/fetch-gh-release-asset@master
