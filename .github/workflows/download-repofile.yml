@@ -11,7 +11,7 @@ jobs:
         with:
           repo: 'dsaltares/godot-wild-jam-18'
           version: 'tags/latest'
-          file: '*.zip'
+          file: 'plague-windows.zip'
           token: ${{ secrets.GITHUB_TOKEN }}
   
   
