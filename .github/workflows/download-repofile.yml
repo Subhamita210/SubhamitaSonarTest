@@ -10,7 +10,7 @@ jobs:
          id: downloadfile  # Remember to give an ID if you need the output
          name: Download the file
          with:
-          url: "https://download-gcdn.ej-technologies.com/install4j/install4j_linux-x64_9_0_6.deb"
+          url: "https://github.com/microsoft/mssql-jdbc/releases/download/v11.2.1/mssql-jdbc_auth.zip"
           target: public/
           auto-match: true
           
