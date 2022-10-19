@@ -35,7 +35,7 @@ jobs:
       - name: commit
         run: |
           # Stage the file, commit and push
-          git branch temp-branch
+          git checkout -b temp-branch
           git add .
           git commit -m "new date commit"
           git config user.name "subhamita210"
