@@ -36,7 +36,8 @@ jobs:
         uses: pozetroninc/github-action-get-latest-release@master
         with:
           repository: microsoft/mssql-jdbc
-          
+      - name: Release name
+        run: echo release ${{ steps.timeseries.outputs.release }}         
         
 #      - name: Download mssql dll
 #       run: |
