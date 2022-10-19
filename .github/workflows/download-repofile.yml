@@ -6,10 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-     # - name: Extract branch name
-       # shell: bash
-      #  run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        #id: extract_branch
       - name: Clear cache
         uses: actions/github-script@v6
         with:
@@ -63,36 +59,3 @@ jobs:
           git push origin HEAD:main
           ls src/
 
-           
-     # - uses: stefanzweifel/git-auto-commit-action@v4
-      #  with:
-     #     file_pattern: 'src/*'
-     #     commit_message: Apply php-cs-fixer changes
-           # git push origin main 
- #     - name: Commit files
- #       run: |
- #         git config --global user.email "subhamita@technoexponent.com"
- #         git config --global user.name "subhamita210"
- #         git commit -m "Add changes" -a
- #     - name: Push changes
- #       uses: ad-m/github-push-action@master
- #       with:
- #         github_token: ${{ secrets.GITHUB_TOKEN }}
-     
-          
- #       uses: dsaltares/fetch-gh-release-asset@master
- #       with:
- #         repo: 'microsoft/mssql-jdbc'
- #         version: 'tags/v11.2.1'
- #         file: 'mssql-jdbc_auth.zip'
- #         target: 'subdir/mssql-jdbc_auth.zip'
- #         token: ${{ secrets.GITHUB_TOKEN }}
-  
-  
-#     - name: Create file
-#       uses: microsoft/mssql-jdbc/fetch-gh-release-asset@master
-#       with:
-#          repo: 'microsoft/mssql-jdbc/releases'
-#          version: 'tags/latest'
-#          file: 'mssql-jdbc_auth.zip'
-#          token: ${{ secrets.GITHUB_TOKEN }}
