@@ -45,8 +45,7 @@ jobs:
         
       - name: character-replacement-test
         run: |
-         REPO= ${{ steps.latest-release.outputs.release }}
-         VERSION="${REPO//v/}"
+         VERSION="${${{ steps.latest-release.outputs.release }}//v/}"
          echo $VERSION
         
         # if mssql .dll file exits then dont download, commit and push
