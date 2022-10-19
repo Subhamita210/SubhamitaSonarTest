@@ -45,6 +45,7 @@ jobs:
         run: echo All files exists!
         
       - name: Download mssql dll
+        if: steps.check_files.outputs.files_exists == 'false'
         run: |
            wget https://github.com/microsoft/mssql-jdbc/releases/download/v11.2.1/mssql-jdbc_auth.zip
            7z x mssql-jdbc_auth.zip
@@ -55,13 +56,15 @@ jobs:
            pwd
            
       - name: setup git config
+        if: steps.check_files.outputs.files_exists == 'false'
         run: |
           # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
           git config user.name "subhamita210"
           git config user.email "<subhamita@technoexponent.com>"
           ls src/
       
-      - name: commit     
+      - name: commit
+        if: steps.check_files.outputs.files_exists == 'false'
         run: |
           # Stage the file, commit and push
           git add src
