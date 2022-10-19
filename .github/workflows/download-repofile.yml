@@ -33,6 +33,17 @@ jobs:
       - name: Branch name
         run: echo running on branch ${GITHUB_REF##*/}
         
+      - name: Check file existence
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "package.json, LICENSE, README.md"
+
+      - name: File exists
+        if: steps.check_files.outputs.files_exists == 'true'
+        # Only runs if all of the files exists
+        run: echo All files exists!
+        
       - name: Download mssql dll
         run: |
            wget https://github.com/microsoft/mssql-jdbc/releases/download/v11.2.1/mssql-jdbc_auth.zip
