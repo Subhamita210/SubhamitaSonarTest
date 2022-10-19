@@ -31,11 +31,8 @@ jobs:
           git config user.name "subhamita210"
           git config user.email "<subhamita@technoexponent.com>"
           ls src/
-      - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GITHUBMY_TOKEN }}
-      - name: commit
-       
+      
+      - name: commit     
         run: |
           # Stage the file, commit and push
           git add .
