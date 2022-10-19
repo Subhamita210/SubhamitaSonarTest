@@ -39,9 +39,14 @@ jobs:
           # Stage the file, commit and push
           git add .
           git commit -m "new date commit"
-          git push origin HEAD:main --force
-          #git push origin main
-          ls src/
+          git branch temp-branch
+          git checkout main
+          git merge temp-branch
+          git push origin main
+ 
+#          git push origin HEAD:main --force
+#         #git push origin main
+#          ls src/
 
            
      # - uses: stefanzweifel/git-auto-commit-action@v4
