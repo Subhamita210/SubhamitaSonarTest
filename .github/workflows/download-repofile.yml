@@ -20,9 +20,9 @@ jobs:
            wget https://github.com/microsoft/mssql-jdbc/releases/download/v11.2.1/mssql-jdbc_auth.zip
            7z x mssql-jdbc_auth.zip
            ls mssql-jdbc_auth
-           cp -f mssql-jdbc_auth/x64/mssql-jdbc_auth-11.2.1.x64.dll sub/mssql-jdbc_auth-11.2.1.x64.dll
+           cp -f mssql-jdbc_auth/x64/mssql-jdbc_auth-11.2.1.x64.dll src/mssql-jdbc_auth-11.2.1.x64.dll
            pwd
-           ls sub/
+           ls src/
            pwd
 
            
