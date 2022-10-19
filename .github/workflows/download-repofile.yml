@@ -33,29 +33,29 @@ jobs:
       - name: Branch name
         run: echo running on branch ${GITHUB_REF##*/}
         
-      - name: Download mssql dll
-        run: |
-           wget https://github.com/microsoft/mssql-jdbc/releases/download/v11.2.1/mssql-jdbc_auth.zip
-           7z x mssql-jdbc_auth.zip
-           ls mssql-jdbc_auth
-           cp -f mssql-jdbc_auth/x64/mssql-jdbc_auth-11.2.1.x64.dll src/mssql-jdbc_auth-11.2.1.x64.dll
-           pwd    
-           ls src/
-           pwd
+   #   - name: Download mssql dll
+   #     run: |
+   #        wget https://github.com/microsoft/mssql-jdbc/releases/download/v11.2.1/mssql-jdbc_auth.zip
+   #        7z x mssql-jdbc_auth.zip
+   #        ls mssql-jdbc_auth
+   #        cp -f mssql-jdbc_auth/x64/mssql-jdbc_auth-11.2.1.x64.dll src/mssql-jdbc_auth-11.2.1.x64.dll
+   #        pwd    
+   #        ls src/
+   #        pwd
            
-      - name: setup git config
-        run: |
-          # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
-          git config user.name "subhamita210"
-          git config user.email "<subhamita@technoexponent.com>"
-          ls src/
+  #    - name: setup git config
+  #      run: |
+  #        # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
+  #        git config user.name "subhamita210"
+  #        git config user.email "<subhamita@technoexponent.com>"
+  #        ls src/
       
-      - name: commit     
-        run: |
-          # Stage the file, commit and push
-          git add .
-          git commit -m "new date commit"
-          git branch
-          git push origin HEAD:main
-          ls src/
+  #    - name: commit     
+  #      run: |
+  #        # Stage the file, commit and push
+  #        git add .
+  #        git commit -m "new date commit"
+  #        git branch
+  #        git push origin HEAD:main
+  #        ls src/
 
