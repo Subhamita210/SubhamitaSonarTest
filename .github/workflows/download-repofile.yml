@@ -37,12 +37,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Stage the file, commit and push
+          git checkout -b temp-branch
           git add .
           git commit -m "new date commit"
           git config user.name "subhamita210"
           git config user.email "<subhamita@technoexponent.com>"
-          git branch temp-branch
+          git branch
           git checkout main
+          git branch
           git merge temp-branch
           git push origin main
  
