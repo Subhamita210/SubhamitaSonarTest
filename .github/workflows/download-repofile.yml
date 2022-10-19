@@ -43,10 +43,14 @@ jobs:
       - name: Release name
         run: echo release ${{ steps.latest-release.outputs.release }}  
         
-      - name: character-replacement-test
-        run: |
-         VERSION="${${{ steps.latest-release.outputs.release }}//v/}"
-         echo $VERSION
+      - uses: mad9000/actions-find-and-replace-string@2
+        id: findandreplace
+        with:
+         source: ${{ steps.latest-release.outputs.release }}
+         find: 'v'        
+         replace: ''
+      - name: Get the above output
+        run: echo "The replaced value is ${{ steps.findandreplace.outputs.value }}"
         
         # if mssql .dll file exits then dont download, commit and push
       - name: Check file existence
