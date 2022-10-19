@@ -28,6 +28,9 @@ jobs:
               })
             }
             console.log("Clear completed")  
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUBMY_TOKEN }}
         
       - name: Git checkout
         uses: actions/checkout@v1
