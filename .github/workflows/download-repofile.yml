@@ -33,11 +33,9 @@ jobs:
           ls src/
 
       - name: commit
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Stage the file, commit and push
-          git checkout -b temp-branch
+          git breach temp-branch
           git add .
           git commit -m "new date commit"
           git config user.name "subhamita210"
