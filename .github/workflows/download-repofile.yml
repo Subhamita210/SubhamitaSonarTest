@@ -33,6 +33,8 @@ jobs:
           ls src/
 
       - name: commit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUBMY_TOKEN }}
         run: |
           # Stage the file, commit and push
           git checkout -b temp-branch
