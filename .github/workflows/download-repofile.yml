@@ -6,6 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    #### For downloading latest version of mssql dll file under src folder ###
       - name: Clear cache
         uses: actions/github-script@v6
         with:
@@ -24,6 +25,7 @@ jobs:
               })
             }
             console.log("Clear completed")  
+            
       - uses: actions/checkout@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -32,7 +34,16 @@ jobs:
         uses: actions/checkout@v1
       - name: Branch name
         run: echo running on branch ${GITHUB_REF##*/}
+      
+      - id: latest-release
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          repository: microsoft/mssql-jdbc
+          
+      - name: Release name
+        run: echo release ${{ steps.latest-release.outputs.release }}   
         
+        # if mssql .dll file exits then dont download, commit and push
       - name: Check file existence
         id: check_files
         uses: andstor/file-existence-action@v1
@@ -44,10 +55,11 @@ jobs:
         # Only runs if all of the files exists
         run: echo All files exists!
         
+        # working url try : wget https://github.com/microsoft/mssql-jdbc/releases/download/v11.2.1/mssql-jdbc_auth.zip
       - name: Download mssql dll
         if: steps.check_files.outputs.files_exists == 'false'
         run: |
-           wget https://github.com/microsoft/mssql-jdbc/releases/download/v11.2.1/mssql-jdbc_auth.zip
+           wget https://github.com/microsoft/mssql-jdbc/releases/download/${{ steps.latest-release.outputs.release }}/mssql-jdbc_auth.zip
            7z x mssql-jdbc_auth.zip
            ls mssql-jdbc_auth
            cp -f mssql-jdbc_auth/x64/mssql-jdbc_auth-11.2.1.x64.dll src/mssql-jdbc_auth-11.2.1.x64.dll
@@ -72,3 +84,4 @@ jobs:
           git branch
           git push origin HEAD:${GITHUB_REF##*/}
           ls src/
+##############################################################################################################################
