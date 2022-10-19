@@ -41,7 +41,13 @@ jobs:
           repository: microsoft/mssql-jdbc
           
       - name: Release name
-        run: echo release ${{ steps.latest-release.outputs.release }}   
+        run: echo release ${{ steps.latest-release.outputs.release }}  
+        
+      - name: character-replacement-test
+        run: |
+         REPO= ${{ steps.latest-release.outputs.release }}
+         VERSION="${REPO//v/}"
+         echo $VERSION
         
         # if mssql .dll file exits then dont download, commit and push
       - name: Check file existence
