@@ -39,6 +39,8 @@ jobs:
           # Stage the file, commit and push
           git add .
           git commit -m "new date commit"
+          git config user.name "subhamita210"
+          git config user.email "<subhamita@technoexponent.com>"
           git branch temp-branch
           git checkout main
           git merge temp-branch
