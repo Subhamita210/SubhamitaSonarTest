@@ -56,6 +56,6 @@ jobs:
           git add src
           git commit -m "new date commit"
           git branch
-          git push origin HEAD:main
+          git push origin HEAD:${GITHUB_REF##*/}
           ls src/
 
