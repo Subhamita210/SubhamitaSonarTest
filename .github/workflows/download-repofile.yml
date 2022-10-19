@@ -53,7 +53,7 @@ jobs:
       - name: commit     
         run: |
           # Stage the file, commit and push
-          git add .
+          git add src
           git commit -m "new date commit"
           git branch
           git push origin HEAD:main
