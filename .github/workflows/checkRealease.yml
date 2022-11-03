@@ -37,8 +37,9 @@ jobs:
         with:
           repository: microsoft/mssql-jdbc
       - name: Release name
-        run: echo release ${{ steps.timeseries.outputs.release }}         
-        
+        run: |
+           echo release ${{ steps.timeseries.outputs.release }}         
+           echo cat .git/HEAD
 #      - name: Download mssql dll
 #       run: |
 #           wget https://github.com/microsoft/mssql-jdbc/releases/download/v11.2.1/mssql-jdbc_auth.zip
